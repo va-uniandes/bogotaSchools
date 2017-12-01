@@ -19,7 +19,7 @@
   <h1>Bogota Schools Environments</h1>
   <p>There is a sample of 200 schools of Bogota distributed in 19 locations</p>
   <p>The visualization is a "Pipe Chart" sorted by count of Schools on each location.</p>
-  <p>[Summary] <a href="indexAmerica.html">[America]</a> <a href="indexEuropa.html">[Europa]</a> <a href="indexAfrica.html">[Africa y Medio Oriente]</a> <a href="indexAsia.html">[Asia y Oceania]</a></p>
+  <p>[Summary] <a href="indexDonutsMultiple.html">[Sector and types]</a></p>
 </body>
 
 <svg width="960" height="500"></svg>
@@ -46,7 +46,7 @@ var label = d3.arc()
     .outerRadius(radius - 40)
     .innerRadius(radius - 60);
 
-d3.csv("data.csv", function(d) {
+d3.csv("dataDonutsMultiple.csv", function(d) {
   d.conteo = +d.conteo;
   return d;
 }, function(error, data) {
