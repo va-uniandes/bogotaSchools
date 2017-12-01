@@ -34,10 +34,10 @@
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
-var radius = 1400 / 2;
+var radius = 1460 / 2;
 
 var cluster = d3.layout.cluster()
-    .size([360, radius - 300]);
+    .size([360, radius - 320]);
 
 var diagonal = d3.svg.diagonal.radial()
     .projection(function(d) { return [d.y, d.x / 180 * Math.PI]; });
