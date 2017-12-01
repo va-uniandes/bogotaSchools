@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.arc text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.arc path {
+  stroke: #fff;
+}
+
+</style>
+<body>
+  <h1>La mayoria de la produccion de Cafe, Flores, Algodon y Cacao se va a Estados Unidos.</h1>
+  <div>Por <a href="https://github.com/esuarezd">Edison Alexis Suarez Ducon</a></div>
+  <p>1. Los paises a los que mas exporta Colombia son Estados Unidos, Japon, Alemania y Canada.
+  De los diez paises a donde mas se exporta, 4 son de America, 4 de Europa y 2 de Asia.</p>
+  <p>The visualizacion es un "Pipe Chart" que muestra los paises a los que mas se exporta de manera descendente y con colores asociados a los continentes.
+    <img border="0" alt="blue1" src="imageBlue1.png" width="10" height="10">America,
+    <img border="0" alt="blue2" src="imageBlue2.png" width="10" height="10">Asia,
+    <img border="0" alt="blue3" src="imageBlue3.png" width="10" height="10">Europa.</p>
+  <p>[Principal] <a href="indexAmerica.html">[America]</a> <a href="indexEuropa.html">[Europa]</a> <a href="indexAfrica.html">[Africa y Medio Oriente]</a> <a href="indexAsia.html">[Asia y Oceania]</a></p>
+</body>
+
+<svg width="960" height="500"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+var svg = d3.select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height"),
+    radius = Math.min(width, height) / 2,
+    g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+var color = d3.scaleOrdinal(["#506c8f", "#6c89ac", "#89a0bc", "#506c8f", "#89a0bc", "#89a0bc", "#89a0bc", "#6c89ac", "#506c8f", "#506c8f"]);
+
+var pie = d3.pie()
+    .sort(null)
+    .value(function(d) { return d.exportacion; });
+
+var path = d3.arc()
+    .outerRadius(radius - 10)
+    .innerRadius(0);
+
+var label = d3.arc()
+    .outerRadius(radius - 40)
+    .innerRadius(radius - 40);
+
+d3.csv("data.csv", function(d) {
+  d.exportacion = +d.exportacion;
+  return d;
+}, function(error, data) {
+  if (error) throw error;
+
+  var arc = g.selectAll(".arc")
+    .data(pie(data))
+    .enter().append("g")
+      .attr("class", "arc");
+
+  arc.append("path")
+      .attr("d", path)
+      .attr("fill", function(d) { return color(d.data.PaisDestino); });
+
+  arc.append("text")
+      .attr("transform", function(d) { return "translate(" + label.centroid(d) + ")"; })
+      .attr("dy", "0.35em")
+      .text(function(d) { return d.data.PaisDestino; });
+});
+
+</script>
