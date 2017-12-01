@@ -18,11 +18,8 @@
 <body>
   <h1>Bogota Schools Environments</h1>
   <p>There is a sample of 200 schools of Bogota distributed in 19 locations</p>
-  <p>The visualizacion es un "Pipe Chart" que muestra los paises a los que mas se exporta de manera descendente y con colores asociados a los continentes.
-    <img border="0" alt="blue1" src="imageBlue1.png" width="10" height="10">America,
-    <img border="0" alt="blue2" src="imageBlue2.png" width="10" height="10">Asia,
-    <img border="0" alt="blue3" src="imageBlue3.png" width="10" height="10">Europa.</p>
-  <p>[Principal] <a href="indexAmerica.html">[America]</a> <a href="indexEuropa.html">[Europa]</a> <a href="indexAfrica.html">[Africa y Medio Oriente]</a> <a href="indexAsia.html">[Asia y Oceania]</a></p>
+  <p>The visualization is a "Pipe Chart" sorted by count of Schools on each location.</p>
+  <p>[Summary] <a href="indexAmerica.html">[America]</a> <a href="indexEuropa.html">[Europa]</a> <a href="indexAfrica.html">[Africa y Medio Oriente]</a> <a href="indexAsia.html">[Asia y Oceania]</a></p>
 </body>
 
 <svg width="960" height="500"></svg>
@@ -35,11 +32,11 @@ var svg = d3.select("svg"),
     radius = Math.min(width, height) / 2,
     g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-var color = d3.scaleOrdinal(["#506c8f", "#6c89ac", "#89a0bc", "#506c8f", "#89a0bc", "#89a0bc", "#89a0bc", "#6c89ac", "#506c8f", "#506c8f"]);
+var color = d3.scaleOrdinal(["#0a7e8c", "#258c98", "#409aa5", "#409aa5", "#5ba9b2", "#5ba9b2", "#76b7bf", "#76b7bf", "#92c5cb", "#92c5cb", "#add4d8", "#add4d8", "#c8e2e5", "#c8e2e5", "#e3f0f2", "#e3f0f2", "#fffffe"]);
 
 var pie = d3.pie()
     .sort(null)
-    .value(function(d) { return d.exportacion; });
+    .value(function(d) { return d.conteo; });
 
 var path = d3.arc()
     .outerRadius(radius - 10)
@@ -47,10 +44,10 @@ var path = d3.arc()
 
 var label = d3.arc()
     .outerRadius(radius - 40)
-    .innerRadius(radius - 40);
+    .innerRadius(radius - 60);
 
 d3.csv("data.csv", function(d) {
-  d.exportacion = +d.exportacion;
+  d.conteo = +d.conteo;
   return d;
 }, function(error, data) {
   if (error) throw error;
@@ -62,12 +59,12 @@ d3.csv("data.csv", function(d) {
 
   arc.append("path")
       .attr("d", path)
-      .attr("fill", function(d) { return color(d.data.PaisDestino); });
+      .attr("fill", function(d) { return color(d.data.localidad); });
 
   arc.append("text")
       .attr("transform", function(d) { return "translate(" + label.centroid(d) + ")"; })
       .attr("dy", "0.35em")
-      .text(function(d) { return d.data.PaisDestino; });
+      .text(function(d) { return d.data.localidad; });
 });
 
 </script>
