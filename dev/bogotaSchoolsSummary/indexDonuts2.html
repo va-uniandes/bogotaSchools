@@ -113,7 +113,7 @@ d3.csv("dataDonuts2.csv", function(d, i, columns) {
       .attr("class", "label-value")
       .attr("x", 0)
       .attr("dy", "1.1em")
-      .text(function(d) { return formatSum(d.sum)/2; });
+      .text(function(d) { return formatSum(d.sum); });
 
   function multiple(d) {
     var r = radius(d.sum);
