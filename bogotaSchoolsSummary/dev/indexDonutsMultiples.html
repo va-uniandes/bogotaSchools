@@ -23,7 +23,16 @@ svg {
 }
 
 </style>
+<head>
+  <title> Bogota Schools Enviments - Summary Pie</title>
+</head>
 <body>
+  <h1>Bogota Schools Environments - Sectors and Type of Education</h1>
+  <p>Sectors. The education is offered by Official sector and non official sector. Official sector means the public education and non official to private education.</p>
+  <p>Type of education. Schools are traditional students (children and teenagers), adults, and schools for traditional and adults</p>
+  <p>The visualization shows for each location the distribution of sectors and type of education. On each donut, it is divided half for sector and half for type of education. The visualization is a "Sized Donuts Multiple" based on <a href="https://bl.ocks.org/mbostock/4c5fad723c87d2fd8273">mbostock</a>.</p>
+  <p>[Summary] <a href="indexDonutsMultiple.html">[Sector and types]</a></p>
+</body>
 <script src="//d3js.org/d3.v4.0.0-alpha.15.min.js"></script>
 <script>
 
@@ -45,7 +54,7 @@ var pie = d3.pie()
     .padAngle(0.02)
     .value(function(d) { return d.schools; });
 
-d3.csv("data.csv", function(d, i, columns) {
+d3.csv("dataDonutsMultiples.csv", function(d, i, columns) {
   return {
     state: d.localidad,
     sum: d3.sum(columns.slice(1), function(key) { return +d[key]; }),

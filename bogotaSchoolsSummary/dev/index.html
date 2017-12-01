@@ -46,7 +46,7 @@ var label = d3.arc()
     .outerRadius(radius - 40)
     .innerRadius(radius - 60);
 
-d3.csv("dataDonutsMultiple.csv", function(d) {
+d3.csv("data.csv", function(d) {
   d.conteo = +d.conteo;
   return d;
 }, function(error, data) {
