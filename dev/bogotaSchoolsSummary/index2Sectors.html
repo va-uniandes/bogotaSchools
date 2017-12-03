@@ -32,9 +32,9 @@ svg {
   <title> Bogota Schools Enviments - Summary Bogota</title>
 </head>
 <body>
-  <h1>Bogota Schools Environments - Sectors</h1>
-  <p>Sectors. The education is offered by Official sector and non official sector. Official sector means the public education and non official to private education.</p>
-  <p>The sample represents both sectors in the same proportion.</p>
+  <h1>Bogota Schools Environments - Sectors per Location</h1>
+  <p>Non official schools are more representative in: Suba, Kennedy, Engativa, Bosa, Usaquen and Teusaquillo.</p>
+  <p>Official schools are more representative in : Ciudad Bolivar, Usme, San Cristobal, Rafael Uribe, Barrios Unidos, Fontibon, Tunjuelito.</p>
   <p>The visualization is a "Sized Donuts Multiple" based on <a href="https://bl.ocks.org/mbostock/4c5fad723c87d2fd8273">mbostock</a>.</p>
   <p>Summary bogota <a href="index.html">[locations]</a> <a href="index1Sectors.html">[Sectors]</a> <a href="index1Types.html">[types]</a> <a href="index1SectorsTypes.html">[Sectors and types]</a></p>
   <p>Summary Locations <a href="index2Sectors.html">[Sectors]</a> <a href="index2Types.html">[types]</a> <a href="index2SectorsTypes.html">[Sectors and types]</a></p>
@@ -119,7 +119,7 @@ d3.csv("data2Sectors.csv", function(d, i, columns) {
       .attr("class", "label-value")
       .attr("x", 0)
       .attr("dy", "1.1em")
-      .text(function(d) { return formatSum(d.sum)/2; });
+      .text(function(d) { return formatSum(d.sum); });
 
   function multiple(d) {
     var r = radius(d.sum);
