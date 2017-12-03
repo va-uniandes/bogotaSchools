@@ -57,7 +57,7 @@ var pie = d3.pie()
     .padAngle(0.02)
     .value(function(d) { return d.schools; });
 
-d3.csv("dataBogotaTypes.csv", function(d, i, columns) {
+d3.csv("dataBogotaSectorsTypes.csv", function(d, i, columns) {
   return {
     state: d.localidad,
     sum: d3.sum(columns.slice(1), function(key) { return +d[key]; }),
