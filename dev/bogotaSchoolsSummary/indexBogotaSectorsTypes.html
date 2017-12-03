@@ -2,6 +2,15 @@
 <meta charset="utf-8">
 <style>
 
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20pt;
+}
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14pt;
+}
+
 body {
   font: 14px sans-serif;
 }
@@ -45,7 +54,7 @@ var radius = d3.scaleSqrt()
     .range([0, 220]);
 
 var color = d3.scaleOrdinal()
-    .range(["#4682b4", "#ff8c00", "#009000"]);
+    .range(["#4682b4", "#83abcd","#ff8c00", "#ffbf71","#009000", "#71c171"]);
 
 var arc = d3.arc()
     .padRadius(50);
