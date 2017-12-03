@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20pt;
+}
+
+body {
+  font: 14px sans-serif;
+}
+
+svg {
+  padding: 14px 0 0 14px;
+}
+
+.legend {
+  vertical-align: top;
+}
+
+.label {
+  text-anchor: middle;
+}
+
+.label-name {
+  font-weight: bold;
+}
+
+</style>
+<head>
+  <title> Bogota Schools Enviments - Summary Bogota</title>
+</head>
+<body>
+  <h1>Bogota Schools Environments - Type of Education per Location</h1>
+  <p>All location have traditional, except Teusaquillo. It has traditional-adults and adults.</p>
+  <p>Locations completed traditionals: Usme, Usaquen, Puente Aranda and Candelaria.</p>
+  <p>Location with traditional-adults : Suba, Engativa, Ciudad Bolivar, Bosa, San Cristobal, Rafael Uribe, Antonio Nariño, Fontibon, Tunjuelito, Santa fe and TEusaquillo.</p>
+  <p>Locations with adults programs: Suba, Keneddy, Bosa, San Cristobal, Antonio Nariño, Barrios Unidos, Teusaquillo, and Chapinero.</p>
+  <p>The visualization is a "Sized Donuts Multiple" based on <a href="https://bl.ocks.org/mbostock/4c5fad723c87d2fd8273">mbostock</a>.</p>
+  <p>Summary bogota <a href="index.html">[locations]</a> <a href="index1Sectors.html">[Sectors]</a> <a href="index1Types.html">[types]</a> <a href="index1SectorsTypes.html">[Sectors and types]</a></p>
+  <p>Summary Locations <a href="index2Sectors.html">[Sectors]</a> <a href="index2Types.html">[types]</a> <a href="index2SectorsTypes.html">[Sectors and types]</a></p>
+  <p>Tree <a href="../bogotaSchoolsTree/index.html">[all the schools]</a> <a href="../bogotaSchoolsTree/indexCollapsive.html">[collapsive the schools]</a></p>
+</body>
+<script src="//d3js.org/d3.v4.0.0-alpha.15.min.js"></script>
+<script>
+
+var formatSum = d3.format(".1s");
+
+var padding = 10;
+
+var radius = d3.scaleSqrt()
+    .range([0, 220]);
+
+var color = d3.scaleOrdinal()
+    .range(["#4682b4", "#ff8c00", "#009000"]);
+
+var arc = d3.arc()
+    .padRadius(50);
+
+var pie = d3.pie()
+    .sort(null)
+    .padAngle(0.02)
+    .value(function(d) { return d.schools; });
+
+d3.csv("data2Types.csv", function(d, i, columns) {
+  return {
+    state: d.localidad,
+    sum: d3.sum(columns.slice(1), function(key) { return +d[key]; }),
+    sectores: columns.slice(1).map(function(key) {
+      return {
+        sector: key,
+        schools: +d[key]
+      };
+    })
+  };
+}, function(error, data) {
+  if (error) throw error;
+
+  radius.domain([0, d3.max(data, function(d) { return d.sum; })]);
+
+  color.domain(data.columns.slice(1));
+
+  var legend = d3.select("body").append("svg")
+      .attr("class", "legend")
+      .attr("width", 210)
+      .attr("height", (data.columns.length - 1) * 20)
+    .selectAll("g")
+      .data(data.columns.slice(1).reverse())
+    .enter().append("g")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend.append("rect")
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend.append("text")
+      .attr("x", 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .text(function(d) { return d; });
+
+  var svg = d3.select("body").selectAll(".pie")
+      .data(data.sort(function(a, b) { return b.sum - a.sum; }))
+    .enter().append("svg")
+      .attr("class", "pie")
+      .each(multiple)
+    .select("g");
+
+  var label = svg.append("text")
+      .attr("class", "label");
+
+  label.append("tspan")
+      .attr("class", "label-name")
+      .attr("x", 0)
+      .attr("dy", "-.2em")
+      .text(function(d) { return d.state; });
+
+  label.append("tspan")
+      .attr("class", "label-value")
+      .attr("x", 0)
+      .attr("dy", "1.1em")
+      .text(function(d) { return formatSum(d.sum); });
+
+  function multiple(d) {
+    var r = radius(d.sum);
+
+    var svg = d3.select(this)
+        .attr("width", r * 2)
+        .attr("height", r * 2)
+      .append("g")
+        .attr("transform", "translate(" + r + "," + r + ")");
+
+    svg.selectAll(".arc")
+        .data(function(d) { return pie(d.sectores); })
+      .enter().append("path")
+        .attr("class", "arc")
+        .attr("d", arc.outerRadius(r).innerRadius(r * 0.6))
+        .style("fill", function(d) { return color(d.data.sector); });
+  }
+});
+
+</script>
