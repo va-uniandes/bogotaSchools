@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>D3 Example</title>
+    <title>Bogota Schools Environments - Summary Polar Area Chart</title>
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/d3-legend/1.1.0/d3-legend.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -27,6 +27,12 @@
     </style>
   </head>
   <body>
+    <h1>Bogota Schools Environments</h1>
+    <p>There is a sample of 200 schools of Bogota distributed in 19 locations</p>
+    <p>The visualization is a "Polar Area Diagram" sorted by count of Schools on each location. </p>
+    <p>Summary sample [locations]<a href="indexDonuts1.html">[Sector and types]</a> <a href="indexDonuts2.html">[Types]</a></p>
+    <p>Tree <a href="../bogotaSchoolsTree/index.html">[see all the schools]</a> <a href="../bogotaSchoolsTree/indexCollapsive.html">[collapsive the schools]</a></p>
+
     <script>
 
       var outerWidth = 800;
@@ -100,7 +106,7 @@
       }
 
       function type(d){
-        d.name = "Bogota schools";
+ //       d.name = "Bogota schools";
         d.conteo = +d.conteo;
         return d;
       }
