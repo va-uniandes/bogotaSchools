@@ -12,7 +12,7 @@ body {
 }
 
 svg {
-  padding: 14px 0 0 10px;
+  padding: 14px 0 0 14px;
 }
 
 .legend {
@@ -32,11 +32,12 @@ svg {
   <title> Bogota Schools Enviments - Summary Bogota</title>
 </head>
 <body>
-  <h1>Bogota Schools Environments - Sectors</h1>
-  <p>Sectors. The education is offered by Official sector and non official sector. Official sector means the public education and non official to private education.</p>
-  <p>The sample represents both sectors in the same proportion.</p>
+  <h1>Bogota Schools Environments - Sectors and Type of Education</h1>
+  <p>The idea is to shows the sector per each type of education.</p>
+  <p> Dark colors means non official schools and soft colors are linked to official schools.</p>
   <p>The visualization is a "Sized Donuts Multiple" based on <a href="https://bl.ocks.org/mbostock/4c5fad723c87d2fd8273">mbostock</a>.</p>
-  <p>Summary bogota <a href="index.html">[locations]</a> <a href="indexBogotaSectors.html">[Sectors]</a> <a href="indexBogotaTypes.html">[types]</a> <a href="indexBogotaSectorsTypes.html">[Sectors and types]</a></p>
+  <p>Summary bogota <a href="index.html">[locations]</a> <a href="index1Sectors.html">[Sectors]</a> <a href="index1Types.html">[types]</a> <a href="index1SectorsTypes.html">[Sectors and types]</a></p>
+  <p>Summary Locations <a href="index2Sectors.html">[Sectors]</a> <a href="index2Types.html">[types]</a> <a href="index2SectorsTypes.html">[Sectors and types]</a></p>
   <p>Tree <a href="../bogotaSchoolsTree/index.html">[all the schools]</a> <a href="../bogotaSchoolsTree/indexCollapsive.html">[collapsive the schools]</a></p>
 </body>
 <script src="//d3js.org/d3.v4.0.0-alpha.15.min.js"></script>
@@ -50,7 +51,7 @@ var radius = d3.scaleSqrt()
     .range([0, 220]);
 
 var color = d3.scaleOrdinal()
-    .range(["#d0743c", "#ff8c00"]);
+    .range(["#4682b4", "#83abcd","#ff8c00", "#ffbf71","#009000", "#71c171"]);
 
 var arc = d3.arc()
     .padRadius(50);
@@ -60,7 +61,7 @@ var pie = d3.pie()
     .padAngle(0.02)
     .value(function(d) { return d.schools; });
 
-d3.csv("dataBogotaSectors.csv", function(d, i, columns) {
+d3.csv("data1SectorsTypes.csv", function(d, i, columns) {
   return {
     state: d.localidad,
     sum: d3.sum(columns.slice(1), function(key) { return +d[key]; }),
@@ -80,7 +81,7 @@ d3.csv("dataBogotaSectors.csv", function(d, i, columns) {
 
   var legend = d3.select("body").append("svg")
       .attr("class", "legend")
-      .attr("width", 180)
+      .attr("width", 240)
       .attr("height", (data.columns.length - 1) * 20)
     .selectAll("g")
       .data(data.columns.slice(1).reverse())
@@ -118,7 +119,7 @@ d3.csv("dataBogotaSectors.csv", function(d, i, columns) {
       .attr("class", "label-value")
       .attr("x", 0)
       .attr("dy", "1.1em")
-      .text(function(d) { return formatSum(d.sum)/2; });
+      .text(function(d) { return formatSum(d.sum); });
 
   function multiple(d) {
     var r = radius(d.sum);
