@@ -1,71 +1,118 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<style>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bogota Schools Environments - Summary Polar Area Chart</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3-legend/1.1.0/d3-legend.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <style>
 
-.arc text {
-  font: 10px sans-serif;
-  text-anchor: middle;
-}
+      .axis text {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 28pt;
+      }
 
-.arc path {
-  stroke: #fff;
-}
+      .axis path, .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+      }
 
-</style>
-<head>
-  <title> Bogota Schools Enviments - Summary Pie</title>
-</head>
-<body>
-  <h1>Bogota Schools Environments</h1>
-  <p>There is a sample of 200 schools of Bogota distributed in 19 locations</p>
-  <p>The visualization is a "Pipe Chart" sorted by count of Schools on each location.</p>
-  <p>Summary sample [locations]<a href="indexDonuts1.html">[Sector and types]</a> <a href="indexDonuts2.html">[Types]</a></p>
-  <p>Tree <a href="../bogotaSchoolsTree/index.html">[see all the schools]</a> <a href="../bogotaSchoolsTree/indexCollapsive.html">[collapsive the schools]</a></p>
-</body>
+      .color-legend text {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 12pt;
+      }
 
-<svg width="960" height="500"></svg>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script>
+    </style>
+  </head>
+  <body>
+    <h1>Bogota Schools Environments</h1>
+    <p>There is a sample of 200 schools of Bogota distributed in 19 locations. They are the reprentatie sample of all the 1536 schools in Bogota.</p>
+    <p>The visualization is a "Polar Area Diagram" sorted by count of Schools on each location.</p>
+    <p>Summary bogota <a href="index.html">[locations]</a> <a href="indexBogotaSectors.html">[Sectors]</a></p><a href="indexBogotaTypes.html">[types]</a></p>
+    <p>Tree <a href="../bogotaSchoolsTree/index.html">[see all the schools]</a> <a href="../bogotaSchoolsTree/indexCollapsive.html">[collapsive the schools]</a></p>
 
-var svg = d3.select("svg"),
-    width = +svg.attr("width"),
-    height = +svg.attr("height"),
-    radius = Math.min(width, height) / 2,
-    g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+    <script>
 
-var color = d3.scaleOrdinal(["#0a7e8c", "#258c98", "#409aa5", "#409aa5", "#5ba9b2", "#5ba9b2", "#76b7bf", "#76b7bf", "#92c5cb", "#92c5cb", "#add4d8", "#add4d8", "#c8e2e5", "#c8e2e5", "#e3f0f2", "#e3f0f2", "#fffffe"]);
+      var outerWidth = 800;
+      var outerHeight = 600;
+      var margin = { left: 10, top: 10, right: 40, bottom: 90 };
+      var radiusMax = 231;
 
-var pie = d3.pie()
-    .sort(null)
-    .value(function(d) { return d.conteo; });
+      var xColumn = "name";
 
-var path = d3.arc()
-    .outerRadius(radius - 10)
-    .innerRadius(0);
+      var colorColumn = "localidad";
+      var radiusColumn = "conteo";
 
-var label = d3.arc()
-    .outerRadius(radius - 40)
-    .innerRadius(radius - 60);
+      var innerWidth  = outerWidth  - margin.left - margin.right;
+      var innerHeight = outerHeight - margin.top  - margin.bottom;
 
-d3.csv("data.csv", function(d) {
-  d.conteo = +d.conteo;
-  return d;
-}, function(error, data) {
-  if (error) throw error;
+      var svg = d3.select("body").append("svg")
+        .attr("width",  outerWidth)
+        .attr("height", outerHeight);
+      var g = svg.append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      var xAxisG = g.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + innerHeight + ")");
+      var pieG = g.append("g");
 
-  var arc = g.selectAll(".arc")
-    .data(pie(data))
-    .enter().append("g")
-      .attr("class", "arc");
+      var colorLegendG = g.append("g")
+        .attr("class", "color-legend")
+        .attr("transform", "translate(5, -1)");
 
-  arc.append("path")
-      .attr("d", path)
-      .attr("fill", function(d) { return color(d.data.localidad); });
+      var xScale = d3.scale.ordinal().rangePoints([0, innerWidth]);
+      var radiusScale = d3.scale.sqrt().range([0, radiusMax]);
+      var colorScale = d3.scale.category10();
 
-  arc.append("text")
-      .attr("transform", function(d) { return "translate(" + label.centroid(d) + ")"; })
-      .attr("dy", "0.35em")
-      .text(function(d) { return d.data.localidad; });
-});
+      var xAxis = d3.svg.axis().scale(xScale).orient("bottom")
+        .outerTickSize(0);
 
-</script>
+      var pie = d3.layout.pie();
+      var arc = d3.svg.arc();
+
+      var colorLegend = d3.legend.color()
+        .scale(colorScale)
+        .shapePadding(3)
+        .shapeWidth(20)
+        .shapeHeight(20)
+        .labelOffset(4);
+
+      function render(data){
+
+        xScale.domain(data.map( function (d){ return d[xColumn]; }));
+        radiusScale.domain([0, d3.max(data, function (d){ return d[radiusColumn]; })]);
+        colorScale.domain(data.map(function (d){ return d[colorColumn]; }));
+
+        pie.value(function (){ return 1; });
+        arc.outerRadius(function(d) {
+          return radiusScale(d.data[radiusColumn]);
+        });
+
+        var pieData = pie(data);
+
+        pieG.attr("transform", "translate(" + innerWidth / 2 + "," + innerHeight / 2 + ")");
+
+        var slices = pieG.selectAll("path").data(pieData);
+        slices.enter().append("path");
+        slices
+          .attr("d", arc)
+          .attr("fill", function (d){ return colorScale(d.data[colorColumn]); });
+        slices.exit().remove();
+
+        xAxisG.call(xAxis);
+        colorLegendG.call(colorLegend);
+      }
+
+      function type(d){
+ //       d.name = "Bogota schools";
+        d.conteo = +d.conteo;
+        return d;
+      }
+
+      d3.csv("data.csv", type, render);
+
+    </script>
+  </body>
+</html>
