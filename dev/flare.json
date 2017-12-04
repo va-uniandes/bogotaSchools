@@ -1,0 +1,428 @@
+{ "name": "BOGOTA", "children":[
+{ "name": "SUBA", "children":[
+{ "name": "ADUL y TRAD", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "CENT EDUC DIST SIMON BOLIVAR", "size": 1}
+]}
+,{ "name": "NO OFICIAL", "children":[
+{ "name": "COL DE LA ENSEÑANZA", "size": 1}
+]}
+]}
+,{ "name": "ADULTOS", "children":[
+{ "name": "NO OFICIAL", "children":[
+{ "name": "INST INTEGRADO DE SUBA", "size": 1}
+]}
+]}
+,{ "name": "TRADICIONAL", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "CENT EDUC DIST ALVARO GOMEZ HURTADO", "size": 1}
+,{ "name": "CENT EDUC DIST NUEVA COLOMBIA", "size": 1}
+,{ "name": "CENT EDUC DIST VILLA ELISA", "size": 1}
+,{ "name": "VENTIUN ANGELES (INST EDUC DIST)", "size": 1}
+,{ "name": "COL DIST EDUC BAS Y MEDIA ALBERTO LLERAS CAMARGO", "size": 1}
+,{ "name": "CENT EDUC DIST RAMON DE ZUBIRIA", "size": 1}
+,{ "name": "COL VIRGINIA GUTIERREZ DE PINEDA (INS EDUC DIST)", "size": 1}
+,{ "name": "GERARDO MOLINA RAMIREZ (INST EDUC DIST)", "size": 1}
+]}
+,{ "name": "NO OFICIAL", "children":[
+{ "name": "COL COLOMBO BRIGHTON - SEDE PRINCIPAL", "size": 1}
+,{ "name": "GIMN NUEVO SUBA", "size": 1}
+,{ "name": "COL ALFONSO JARAMILLO", "size": 1}
+,{ "name": "LIC ARKADIA COLOMBIA", "size": 1}
+,{ "name": "LIC GLOBERTH MIXTO", "size": 1}
+,{ "name": "INST CULT RAFAEL MAYA", "size": 1}
+,{ "name": "LIC SIGLO XXI", "size": 1}
+,{ "name": "INST COPESAL", "size": 1}
+,{ "name": "COL HOGAR DE NAZARETH", "size": 1}
+,{ "name": "COL STELLA MATUTINA", "size": 1}
+,{ "name": "COL INGLATERRA REAL", "size": 1}
+,{ "name": "LIC HOMERICO", "size": 1}
+,{ "name": "CENT DE INTEGRACION EDUCACION DEL NORTE (CIEN )", "size": 1}
+,{ "name": "INST ALBERTO MERANI", "size": 1}
+,{ "name": "INST MILIT AQUILEO PARRA", "size": 1}
+,{ "name": "COL SANTIAGO MAYOR", "size": 1}
+,{ "name": "COL SAN SIMON", "size": 1}
+,{ "name": "COL EMILIO VALENZUELA - SEDE PRINCIPAL", "size": 1}
+,{ "name": "COL HIJAS DE CRISTO REY", "size": 1}
+,{ "name": "LIC LA SABANA", "size": 1}
+,{ "name": "COL LISA MEITNER", "size": 1}
+]}
+]}
+]}
+,{ "name": "ENGATIVA", "children":[
+{ "name": "ADUL y TRAD", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "CENT EDUC DIST ANTONIO VILLAVICENCIO", "size": 1}
+,{ "name": "LICEO NAL MAGDALENA ORTEGA DE NARIÑO", "size": 1}
+]}
+,{ "name": "NO OFICIAL", "children":[
+{ "name": "COLEGIO MAYOR PRIMEROS MAESTROS", "size": 1}
+,{ "name": "COL COOP MINUTO DE DIOS", "size": 1}
+]}
+]}
+,{ "name": "ADULTOS", "children":[
+{ "name": "NO OFICIAL", "children":[
+{ "name": "COL INST INSCAP SEDE FERIAS", "size": 1}
+]}
+]}
+,{ "name": "TRADICIONAL", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "CENT EDUC DIST GUILLERMO LEON VALENCIA", "size": 1}
+,{ "name": "COL DIST MARIANO OSPINA PEREZ", "size": 1}
+,{ "name": "COLEGIO RODOLFO LLINAS IED - SEDE PRINCIPAL", "size": 1}
+,{ "name": "CENT EDUC DIST MANUELA AYALA DE GAITAN", "size": 1}
+,{ "name": "CENT EDUC DIST NUEVA CONSTITUCION", "size": 1}
+,{ "name": "COL DIST SIMON BOLIVAR", "size": 1}
+]}
+,{ "name": "NO OFICIAL", "children":[
+{ "name": "COL DE FORMACION INTEGRAL VIRGEN DE LA PEÑA", "size": 1}
+,{ "name": "COL ESTRADA DE MARIA AUXILIADORA", "size": 1}
+,{ "name": "LIC LA ESPAÑOLA GABRIEL ANZOLA GOMEZ", "size": 1}
+,{ "name": "COL CATOLICO DE LA SABANA", "size": 1}
+,{ "name": "INST SUP COOPERATIVO", "size": 1}
+,{ "name": "COL TOMAS ALVA EDISON", "size": 1}
+,{ "name": "COL CAFAM", "size": 1}
+,{ "name": "COL DE BTO UNIVERSIDAD LIBRE", "size": 1}
+,{ "name": "CENT CIAL DE EDUC MEDIA MARGARITA BOSCO", "size": 1}
+,{ "name": "COL REAL DE COLOMBIA - SEDE PRINCIPAL", "size": 1}
+,{ "name": "INST TOMAS DE IRIARTE", "size": 1}
+,{ "name": "COL EL MINUTO DE DIOS", "size": 1}
+,{ "name": "COL RR OBLATAS AL DIVINO AMOR", "size": 1}
+]}
+]}
+]}
+,{ "name": "KENNEDY", "children":[
+{ "name": "ADULTOS", "children":[
+{ "name": "NO OFICIAL", "children":[
+{ "name": "COL BRITANICO SEDE KENNEDY", "size": 1}
+]}
+]}
+,{ "name": "TRADICIONAL", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "COL GENERAL GUSTAVO ROJAS PINILLA", "size": 1}
+,{ "name": "INEM FRANCISCO DE PAULA SANTANDER", "size": 1}
+,{ "name": "CENT EDUC DIST BAS Y MEDIA O.E.A", "size": 1}
+,{ "name": "CEDID ALFONSO LOPEZ PUMAREJO", "size": 1}
+,{ "name": "COL DIST CARLOS ARANGO VELEZ", "size": 1}
+,{ "name": "CENT EDUC DIST ALQUERIA LA FRAGUA", "size": 1}
+,{ "name": "CENT EDUC DIST CLASS", "size": 1}
+,{ "name": "CENT EDUC DIST PAULO VI", "size": 1}
+,{ "name": "COL DIST EDUC BAS Y MEDIA PROSPERO PINZON", "size": 1}
+,{ "name": "CENT EDUC DIST FRANCISCO DE MIRANDA", "size": 1}
+]}
+,{ "name": "NO OFICIAL", "children":[
+{ "name": "COL CIUDAD PATIO BONITO", "size": 1}
+,{ "name": "UNID EDUC JEAN PIAGET", "size": 1}
+,{ "name": "INST TENERIFE", "size": 1}
+,{ "name": "COLEGIO ERNESTO GUHL - SEDE PRINCIPAL", "size": 1}
+,{ "name": "COLEGIO SANTO DOMINGO BILINGÜE", "size": 1}
+,{ "name": "COLEGIO AGUSTINIANO TAGASTE - SEDE PRINCIPAL", "size": 1}
+,{ "name": "COL RAFAEL GOBERNA II SEDE", "size": 1}
+,{ "name": "COL JAIME QUIJANO CABALLERO", "size": 1}
+,{ "name": "INSTITUTO COMERCIAL LORETO - SEDE PRINCIPAL", "size": 1}
+,{ "name": "COL LUTERANO SAN LUCAS", "size": 1}
+,{ "name": "COL SANTA LUISA", "size": 1}
+,{ "name": "GIMN MILIT FUERZA AEREA DE COLOMBIA", "size": 1}
+,{ "name": "COLEGIO FRANCISCO I", "size": 1}
+]}
+]}
+]}
+,{ "name": "CIUDAD BOLIVAR", "children":[
+{ "name": "ADUL y TRAD", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "CEDID CIUDAD BOLIVAR", "size": 1}
+,{ "name": "CENT EDUC DIST ISMAEL PERDOMO", "size": 1}
+]}
+]}
+,{ "name": "TRADICIONAL", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "CENT EDUC DIST MANUELA BELTRAN", "size": 1}
+,{ "name": "COL DIST EDUC BAS Y MEDIA ARBORIZADORA ALTA", "size": 1}
+,{ "name": "COL ANTONIO GARCIA (INS EDUC DIST)", "size": 1}
+,{ "name": "CENT EDUC DIST CALASANZ (BUENAVISTA)", "size": 1}
+,{ "name": "CENT EDUC DIST RAFAEL URIBE URIBE", "size": 1}
+,{ "name": "CENT EDUC DIST SOTAVENTO", "size": 1}
+]}
+,{ "name": "NO OFICIAL", "children":[
+{ "name": "COL LA NUEVA ESTANCIA", "size": 1}
+,{ "name": "GIMN BILING OBREGON", "size": 1}
+,{ "name": "NUEVO COL LUSADI", "size": 1}
+,{ "name": "COL POPULAR BOLIVARIANO", "size": 1}
+,{ "name": "LIC LA CORUÑA", "size": 1}
+,{ "name": "INST SANTA MARIA DE LA CRUZ", "size": 1}
+,{ "name": "INST DE EDUC ELEMENTAL PREESCOLAR Y SECUNDARIA  INELPRES", "size": 1}
+]}
+]}
+]}
+,{ "name": "USME", "children":[
+{ "name": "TRADICIONAL", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "INST EDUC DIST JUAN LUIS  LONDOÑO", "size": 1}
+,{ "name": "CENT EDUC DIST NUEVA ESPERANZA", "size": 1}
+,{ "name": "CENT EDUC DIST SANTA LIBRADA", "size": 1}
+,{ "name": "COLEGIO FERNANDO GONZALEZ OCHOA", "size": 1}
+,{ "name": "ORLANDO FALS BORDA (ANTES BARRANQUILLITA)", "size": 1}
+,{ "name": "CENT EDUC DIST GRAN YOMASA", "size": 1}
+,{ "name": "CENT EDUC DIST DON BOSCO IV", "size": 1}
+,{ "name": "COL DE EDUC BAS Y MEDIA ESTANISLAO ZULETA", "size": 1}
+,{ "name": "INST EDUC DIST EL BOSQUE", "size": 1}
+,{ "name": "COL DIST DE USME", "size": 1}
+,{ "name": "CENT EDUC DIST MIRAVALLE", "size": 1}
+]}
+,{ "name": "NO OFICIAL", "children":[
+{ "name": "INST PEDAG LA REAL SOCIEDAD - SEDE PRINCIPAL", "size": 1}
+,{ "name": "COL SANTA LIBRADA", "size": 1}
+,{ "name": "COL ARIEL DAVID", "size": 1}
+,{ "name": "LIC MARANATA", "size": 1}
+]}
+]}
+]}
+,{ "name": "BOSA", "children":[
+{ "name": "ADUL y TRAD", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "CENT EDUC DIST SAN BERNARDINO", "size": 1}
+]}
+,{ "name": "NO OFICIAL", "children":[
+{ "name": "COL COLOMBO JAPONES", "size": 1}
+]}
+]}
+,{ "name": "ADULTOS", "children":[
+{ "name": "NO OFICIAL", "children":[
+{ "name": "C.E. FORMAL PARA ADULTOS LOS SAUCES - SEDE PRINCIPAL", "size": 1}
+]}
+]}
+,{ "name": "TRADICIONAL", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "COLEGIO JOSÉ FRANCISCO SOCARRAS (IED) - SEDE PRINCIPAL", "size": 1}
+,{ "name": "COL CUIDADELA EDUCATIVA BOSA (INS EDUC DIST)", "size": 1}
+,{ "name": "CENT EDUC DIST FRANCISCO DE PAULA SANTANDER", "size": 1}
+,{ "name": "INST EDUC DIST LEONARDO POSADA PEDRAZA - SEDE PRINCIPAL", "size": 1}
+,{ "name": "INST EDUC DIST FE Y ALEGRIA SAN IGNACIO", "size": 1}
+]}
+,{ "name": "NO OFICIAL", "children":[
+{ "name": "NUEVO LIC GRANADINO", "size": 1}
+,{ "name": "CENT EDUC WILFREDO LEHNER", "size": 1}
+,{ "name": "COL CLARETIANO EL LIBERTADOR  - SEDE PRINCIPAL", "size": 1}
+,{ "name": "COL NSTRA SRA DE NAZARETH", "size": 1}
+,{ "name": "LIC  ANTONIO DE TOLEDO", "size": 1}
+,{ "name": "LIC MIX LOS CENTAUROS", "size": 1}
+]}
+]}
+]}
+,{ "name": "SAN CRISTOBAL", "children":[
+{ "name": "ADUL y TRAD", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "COL DIST EDUC BAS Y MEDIA LOS ALPES", "size": 1}
+]}
+]}
+,{ "name": "ADULTOS", "children":[
+{ "name": "NO OFICIAL", "children":[
+{ "name": "CENT EDUC PARA JOVENES Y ADULTOS LEPANTO", "size": 1}
+]}
+]}
+,{ "name": "TRADICIONAL", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "CENT EDUC DIST FLORENTINO GONZALEZ", "size": 1}
+,{ "name": "CENT EDUC DIST ALTAMIRA SUR ORIENTAL", "size": 1}
+,{ "name": "COL DIST TOMAS RUEDA VARGAS", "size": 1}
+,{ "name": "CENT EDUC DIST JUAN REY", "size": 1}
+,{ "name": "CENT EDUC DIST COMFENALCO NUEVA ROMA", "size": 1}
+,{ "name": "CENT EDUC DIST EL RODEO", "size": 1}
+]}
+,{ "name": "NO OFICIAL", "children":[
+{ "name": "INST ACAD BETHEL", "size": 1}
+,{ "name": "COL SUR ORIENTAL PANAMERICANO", "size": 1}
+,{ "name": "COL PARROQ ADVENIAT", "size": 1}
+]}
+]}
+]}
+,{ "name": "USAQUEN", "children":[
+{ "name": "TRADICIONAL", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "CENT EDUC NAL PILOTO BAVARIA", "size": 1}
+,{ "name": "COL DIST TOBERIN", "size": 1}
+,{ "name": "SALUDCOOP NORTE (INST EDUC DIST)", "size": 1}
+,{ "name": "CENT EDUC DIST DE USAQUEN (ANTIGUA COLONIA ESCOLAR DE VACACI", "size": 1}
+,{ "name": "CENT EDUC DIST PRADO VERANIEGO II", "size": 1}
+]}
+,{ "name": "NO OFICIAL", "children":[
+{ "name": "COL MARIA INMACULADA", "size": 1}
+,{ "name": "COL MAYOR JOSE CELESTINO MUTIS", "size": 1}
+,{ "name": "LIC PSICOPEDAG TIBABITA", "size": 1}
+,{ "name": "COL DE LA PRESENTACION SANS FACON", "size": 1}
+,{ "name": "LIC  DE CERVANTES PADRES AGUSTINOS", "size": 1}
+,{ "name": "COL PROVINMA", "size": 1}
+]}
+]}
+]}
+,{ "name": "RAFAEL URIBE", "children":[
+{ "name": "ADUL y TRAD", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "COL NAL CLEMENCIA DE CAYCEDO", "size": 1}
+,{ "name": "CENT EDUC DIST BRAVO PAEZ", "size": 1}
+,{ "name": "LICEO FEM DE CUNDINAMARCA MERCEDES NARIÑO", "size": 1}
+,{ "name": "CENT EDUC DIST REINO DE HOLANDA", "size": 1}
+,{ "name": "CENT EDUC DIST MARRUECOS Y MOLINOS", "size": 1}
+]}
+]}
+,{ "name": "TRADICIONAL", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "COL MARIA CANO (NIS EDUC DIST)", "size": 1}
+,{ "name": "CENT EDUC DIST QUIROGA ALIANZA", "size": 1}
+,{ "name": "CENT EDUC DIST ALEJANDRO OBREGON", "size": 1}
+,{ "name": "CENT EDUC DIST REP FEDERAL DE ALEMANIA", "size": 1}
+]}
+,{ "name": "NO OFICIAL", "children":[
+{ "name": "COL MAYOR DEL QUIROGA  (TALLER INF QUIROGA)", "size": 1}
+]}
+]}
+]}
+,{ "name": "ANTONIO NARIÑO", "children":[
+{ "name": "ADUL y TRAD", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "COL DIST GUILLERMO LEON VALENCIA", "size": 1}
+,{ "name": "CEDIT FRANCISCO DE PAULA SANTANDER", "size": 1}
+]}
+]}
+,{ "name": "ADULTOS", "children":[
+{ "name": "NO OFICIAL", "children":[
+{ "name": "CENT PANAMERICANO DE CAPACITACION SEDE RESTREPO", "size": 1}
+]}
+]}
+,{ "name": "TRADICIONAL", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "CENT EDUC DIST ANTONIO BARAYA", "size": 1}
+,{ "name": "COL DIST EDUC BAS Y MEDIA ATANASIO GIRARDOT", "size": 1}
+]}
+,{ "name": "NO OFICIAL", "children":[
+{ "name": "COL ARTEAGA MUÑOZ", "size": 1}
+,{ "name": "COL ADVENTISTA EMMANUEL", "size": 1}
+,{ "name": "ESC NORMAL SUPERIOR NSTRA SRA DE LA PAZ", "size": 1}
+]}
+]}
+]}
+,{ "name": "BARRIOS UNIDOS", "children":[
+{ "name": "ADULTOS", "children":[
+{ "name": "NO OFICIAL", "children":[
+{ "name": "COL HARVARD", "size": 1}
+]}
+]}
+,{ "name": "TRADICIONAL", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "COL DIST TOMAS CARRASQUILLA", "size": 1}
+,{ "name": "COL DIST REP DE PANAMA", "size": 1}
+,{ "name": "COL DIST HELADIA MEJIA HIJOS DE EDUCADORES", "size": 1}
+,{ "name": "COL DIST RAFAEL BERNAL JIMENEZ", "size": 1}
+]}
+,{ "name": "NO OFICIAL", "children":[
+{ "name": "COL SANTA ROSA DE LIMA", "size": 1}
+,{ "name": "LIC FORMACION EDUC PERSONALIZADA", "size": 1}
+]}
+]}
+]}
+,{ "name": "FONTIBON", "children":[
+{ "name": "ADUL y TRAD", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "COL DEPT INTEGRADO FONTIBON", "size": 1}
+]}
+]}
+,{ "name": "TRADICIONAL", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "CENT EDUC DIST ANTONIO VAN UDEN", "size": 1}
+,{ "name": "CENT EDUC DIST RODRIGO ARENAS BETANCOURT", "size": 1}
+,{ "name": "CENT EDUC DIST PABLO NERUDA", "size": 1}
+,{ "name": "COL CARLO FEDERICI (INST EDUC DIST)", "size": 1}
+]}
+,{ "name": "NO OFICIAL", "children":[
+{ "name": "GIMNASIO MODELIA REAL - SEDE PRINCIPAL", "size": 1}
+]}
+]}
+]}
+,{ "name": "TUNJUELITO", "children":[
+{ "name": "ADUL y TRAD", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "INST TEC IND PILOTO", "size": 1}
+]}
+]}
+,{ "name": "TRADICIONAL", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "CENT EDUC DIST RUFINO JOSE CUERVO", "size": 1}
+,{ "name": "COL DIST U.B. CIUDAD DE BOGOTA", "size": 1}
+,{ "name": "CENT EDUC DIST ISLA DEL SOL", "size": 1}
+]}
+,{ "name": "NO OFICIAL", "children":[
+{ "name": "FUND INST TECNOLOGICO DEL SUR", "size": 1}
+,{ "name": "GIMN COMERCIAL LOS ANDES - SEDE PRINCIPAL", "size": 1}
+]}
+]}
+]}
+,{ "name": "PUENTE ARANDA", "children":[
+{ "name": "TRADICIONAL", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "COL DIST BENJAMIN HERRERA", "size": 1}
+,{ "name": "CENT EDUC DIST EL JAZMIN", "size": 1}
+,{ "name": "COL DIST LUIS CARLOS GALAN SARMIENTO", "size": 1}
+,{ "name": "CENT EDUC DIST ANTONIO JOSE DE SUCRE", "size": 1}
+]}
+,{ "name": "NO OFICIAL", "children":[
+{ "name": "INST PEDAG PARA EL DESARROLLO INTEGRAL CREAR", "size": 1}
+]}
+]}
+]}
+,{ "name": "LOS MARTIRES", "children":[
+{ "name": "TRADICIONAL", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "CENT EDUC DIST REP DE VENEZUELA", "size": 1}
+,{ "name": "CENT EDUC DIST EDUARDO SANTOS", "size": 1}
+]}
+,{ "name": "NO OFICIAL", "children":[
+{ "name": "COL CRISTIANO SEMILLA DE VIDA", "size": 1}
+]}
+]}
+]}
+,{ "name": "SANTA FE", "children":[
+{ "name": "ADUL y TRAD", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "COL DIST ANTONIO JOSE URIBE", "size": 1}
+]}
+]}
+,{ "name": "TRADICIONAL", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "CENT EDUC DIST LA GIRALDA", "size": 1}
+,{ "name": "CENT EDUC DIST MANUEL ELKIN PATARROYO", "size": 1}
+]}
+]}
+]}
+,{ "name": "TEUSAQUILLO", "children":[
+{ "name": "ADUL y TRAD", "children":[
+{ "name": "NO OFICIAL", "children":[
+{ "name": "EXTERN SIMON BOLIVAR", "size": 1}
+,{ "name": "COL BOGOTANO MIXTO", "size": 1}
+]}
+]}
+,{ "name": "ADULTOS", "children":[
+{ "name": "NO OFICIAL", "children":[
+{ "name": "INSTITUTO EDUCATIVO FUTURO HOY - SEDE PRINCIPAL", "size": 1}
+]}
+]}
+]}
+,{ "name": "CHAPINERO", "children":[
+{ "name": "ADULTOS", "children":[
+{ "name": "NO OFICIAL", "children":[
+{ "name": "CENT PANAMERICANO DE CAPACITACION SEDE CHAPINERO", "size": 1}
+]}
+]}
+,{ "name": "TRADICIONAL", "children":[
+{ "name": "OFICIAL", "children":[
+{ "name": "CENT EDUC DIST SAN MARTIN DE PORRES", "size": 1}
+]}
+]}
+]}
+,{ "name": "CANDELARIA", "children":[
+{ "name": "TRADICIONAL", "children":[
+{ "name": "NO OFICIAL", "children":[
+{ "name": "COL DEL SANTISIMO ROSARIO", "size": 1}
+]}
+]}
+]}
+]}

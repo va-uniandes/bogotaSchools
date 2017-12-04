@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>School's Environment - Bogota 2017</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/one-page-wonder-results.css" rel="stylesheet">
+    <link href="./css/scatterPlot.css" rel="stylesheet">
+
+  </head>
+
+  <body onload="scatterPlot('Total')">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">School's Environment</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Data.html">Data</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Analysis.html">Analysis</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="./Results.html">Results
+                <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead">
+      <div class="overlay">
+        <div class="container">
+          <h1 class="display-1 text-white">School's Environment</h1>
+          <h2 class="display-4 text-white">Environment analysis of Bogota's schools</h2>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-12 order-2">
+            <div class="p-12" id='DscatterPlot'>
+              <svg id="scatterPlot"/>
+              <h2 class="display-4" >Data Correlation</h2>
+              <div id="Categoria">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Environment Cateory</th>
+                      <th></th>
+                      <th>Data Correlation</th>
+                    </tr>
+                  </thead>
+                    <tbody>
+                      <tr>
+                        <td>Category</td>
+                        <td>    
+                                <select  id="Category" onchange="SeleccionCategoria()">
+                                  <option value="Total">Total</option>
+                                  <option  value="Bares">Bars</option>
+                                  <option  value="Seguridad">Secutiry</option>
+                                  <option  value="Act Impacto">Impact Activities</option>
+                                  <option  value="Policia">Police</option>
+                                  <option  value="Salud">Health</option>
+                                  <option  value="Cultura">Culture</option>
+                                  <option  value="Deporte">Sports</option>
+                                  </select>  
+                        </td>
+                        <td><input type="text" class="form-control" id="Correlation" value ="0.222607037" readonly></td>
+                      </tr>
+                      </tbody>
+                  </table>
+
+              </div>
+
+  </div>
+
+
+
+
+
+            </div>
+          </div>
+          <div class="col-md-6 order-1">
+            <div class="p-5">
+              <h2 class="display-4" href="./Data.html">Data Collection</h2>
+              <p>The Architecture department of Universidad de los Andes, 
+                provided all the basic data used in this project. 
+                The first step was the basic analysis and data characterization in order to stablish 
+                the boundaries of the study and any other alternative data required to execute the analysis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6 order-1">
+              <div class="p-5">
+                <img class="img-fluid rounded-circle"  src="./img/analysis.jpg" alt="">
+              </div>
+            </div>
+            <div class="col-md-6 order-2">
+              <div class="p-5">
+                <h2 class="display-4" href="./Analisys.html">Data Collection</h2>
+                <p>The Architecture department of Universidad de los Andes, 
+                  provided all the basic data used in this project. 
+                  The first step was the basic analysis and data characterization in order to stablish 
+                  the boundaries of the study and any other alternative data required to execute the analysis.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-6 order-2">
+                <div class="p-5">
+                  <img class="img-fluid rounded-circle"  src="./img/results.png" alt="">
+                </div>
+              </div>
+              <div class="col-md-6 order-1">
+                <div class="p-5">
+                  <h2 class="display-4" href="./results.html">Data Collection</h2>
+                  <p>The Architecture department of Universidad de los Andes, 
+                    provided all the basic data used in this project. 
+                    The first step was the basic analysis and data characterization in order to stablish 
+                    the boundaries of the study and any other alternative data required to execute the analysis.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="./matrixScatterPlot.js"></script>
+
+    <script>
+      function SeleccionCategoria() {
+          var x = document.getElementById("Category").value;
+          scatterPlot(x);
+          if(x=="Total")
+          {
+            document.getElementById("Correlation").value = "0.222607037";
+          }
+          else if(x=="Bares")
+          {
+            document.getElementById("Correlation").value = "0.228958649";
+          }
+          else if(x=="Seguridad")
+          {
+            document.getElementById("Correlation").value = "0.219877547";
+          }
+          else if(x=="Act Impacto")
+          {
+            document.getElementById("Correlation").value = "0.146843471";
+          }
+          else if(x=="Policia")
+          {
+            document.getElementById("Correlation").value = "-0.21889252"; 
+          }
+          else if(x=="Salud")
+          {
+            document.getElementById("Correlation").value = "0.178328043";
+          }
+          else if(x=="Cultura")
+          {
+            document.getElementById("Correlation").value = "-0.389293195";
+          }
+          else if(x=="Deporte")
+          {
+            document.getElementById("Correlation").value = "0.1988265";
+          }
+
+      }
+  </script>
+
+  </body>
+
+
+
+
+
+</html>

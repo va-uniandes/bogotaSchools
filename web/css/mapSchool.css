@@ -1,0 +1,53 @@
+.background {
+  fill: none;
+  pointer-events: all;
+}
+.feature {
+  fill: #ccc;
+  cursor: pointer;
+}
+.feature.active {
+  fill: orange;
+}
+.mesh {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.calles {
+  fill: none;
+  stroke: #a0a0a0;
+}
+.limites {
+  fill: none;
+  stroke: #fff;
+}
+.nodocolegio {
+    fill: rgb(0,0,0);
+    stroke: rgb(0,0,0);
+}
+.nodobar {
+    fill: rgb(255,0,0);
+    stroke: none;
+}
+.nodop {
+    fill: #FFB659;
+    stroke: none;
+}
+.nodoca {
+    fill: #e1da23;
+    stroke: none;
+}
+.nodoho {
+    fill: #2F85E8;
+    stroke: none;
+}
+.nodohup {
+    fill: #4CFFA7;
+    stroke: none;
+}
+.nodohuv {
+    fill: #B837FF;
+    stroke: none;
+}

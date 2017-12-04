@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>School's Environment - Bogota 2017</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/one-page-wonder-analysis.css" rel="stylesheet">
+    <link href="./css/parallelCoordinates.css" rel="stylesheet">
+    <link href="./css/mapSchool.css" rel="stylesheet">
+  </head>
+
+  <body onload='loadGraphs()'>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html">School's Environment</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Data.html">Data</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="./Analysis.html">Analysis <span class="sr-only">(current)</span> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Results.html">Results</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead">
+      <div class="overlay">
+        <div class="container">
+          <h1 class="display-1 text-white">School's Environment</h1>
+          <h2 class="display-4 text-white">Data Analysis</h2>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 order-2">
+            <div class="p-5"id="map">
+            </div>
+          </div>
+          <div class="col-md-6 order-1">
+            <div class="p-5">
+              <h2 class="display-4">School's Distribution </h2>
+              <p>The data collected contains 200 schools distributed in all Bogota's Districts in order to achieve a 
+                  representative sample for the 1536 schools located in the city. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section>
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-md-6 order-2">
+                  <div class="p-5" id="DParallelCoordinates">
+                        <svg id="ParallelCoordinates"/>
+                        <div id="filtros">
+                                <table class="table">
+                                  <thead>
+                                    <tr>
+                                      <th>Filtro</th>
+                                      <th></th>
+                                      <th>Filtro</th>
+                                      <th></th>
+                                    </tr>
+                                  </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>Localidades:</td>
+                                        <td>    
+                                                <select  id="localidad" onchange="SeleccionLocalidad()">
+                                                  <option >Localidad</option>
+                                                  <option  value="./colegios_l0.csv">ANTONIO NARIÑO</option>
+                                                  <option  value="./colegios_l1.csv">BARRIOS UNIDOS</option>
+                                                  <option  value="./colegios_l2.csv">BOSA</option>
+                                                  <option  value="./colegios_l3.csv">CANDELARIA</option>
+                                                  <option  value="./colegios_l4.csv">CHAPINERO</option>
+                                                  <option  value="./colegios_l5.csv">CIUDAD BOLIVAR</option>
+                                                  <option  value="./colegios_l6.csv">ENGATIVA</option>
+                                                  <option  value="./colegios_l7.csv">FONTIBON</option>
+                                                  <option  value="./colegios_l8.csv">KENNEDY</option>
+                                                  <option  value="./colegios_l9.csv">LOS MARTIRES</option>
+                                                  <option  value="./colegios_l10.csv">PUENTE ARANDA</option>
+                                                  <option  value="./colegios_l11.csv">RAFAEL URIBE</option>
+                                                  <option  value="./colegios_l12.csv">SAN CRISTOBAL</option>
+                                                  <option  value="./colegios_l13.csv">SANTA FE</option>
+                                                  <option  value="./colegios_l14.csv">SUBA</option>
+                                                  <option  value="./colegios_l15.csv">TUNJUELITO</option>
+                                                  <option  value="./colegios_l16.csv">USAQUEN</option>
+                                                  <option  value="./colegios_l17.csv">USME</option>
+                                                  </select>  
+                                        
+                                        </td>
+                                        <td>Tipo:</td>
+                                        <td>
+                                        
+                                            <select  id="tipo" onchange="SeleccionTipo()">
+                                            <option >Tipo de Programa</option>
+                                            <option  value="./colegios_t0.csv">PROGRAMA PARA JÓVENES EN EXTRAEDAD Y ADULTOS</option>
+                                            <option  value="./colegios_t1.csv">PROGRAMA PARA JÓVENES EN EXTRAEDAD Y ADULTOS , TRADICIONAL</option>
+                                            <option  value="./colegios_t2.csv">TRADICIONAL</option>
+                                            </select>
+                                        
+                                        
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                          <td>Jornada:</td>
+                                          <td>
+                                          
+                                              <select  id="jornada" onchange="SeleccionJornada()">
+                                              <option >Tipo de Jornada</option>
+                                              <option  value="./colegios_j0.csv">COMPLETA</option>
+                                              <option  value="./colegios_j1.csv">MAÑANA</option>
+                                              <option  value="./colegios_j2.csv">NOCTURNA</option>
+                                              <option  value="./colegios_j3.csv">TARDE</option>
+                                              </select>
+                                          
+                                          
+                                          </td>
+                
+                                          <td>Sector:</td>
+                                          <td>
+                                          
+                                              <select  id="sector" onchange="SeleccionSector()">
+                                              <option >Sector</option>
+                                              <option  value="./colegios_s0.csv">OFICIAL</option>
+                                              <option  value="./colegios_s1.csv">NO OFICIAL</option>
+                                              </select>
+                                          
+                                          
+                                          </td>
+                                      </tr>
+                                      </tbody>
+                                  </table>
+                
+                              </div>
+
+                  </div>
+                </div>
+                <div class="col-md-6 order-1">
+                  <div class="p-5">
+                    <h2 class="display-4">School's Distribution </h2>
+                    <p>The data collected contains 200 schools distributed in all Bogota's Districts in order to achieve a 
+                        representative sample for the 1536 schools located in the city. </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+    
+          
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="//d3js.org/d3.v4.min.js"></script>
+    <script>
+            d3v4 = d3
+            window.d3 = null
+    </script>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="//d3js.org/topojson.v1.min.js"></script>
+    <script src="//d3js.org/d3-path.v1.min.js"></script>
+    <script src="//d3js.org/d3-shape.v1.min.js"></script>
+    <script src="./oboe-browser.min.js"></script>
+
+    <script src="./map.js"></script>
+    <script src="./ParallelCoordinates.js"></script>
+    
+    <script>
+    function loadGraphs()
+    {
+        drawMap();
+        drawParallelCoordinates("./colegios_total.csv")
+        
+    }
+    </script>
+
+<script>
+        function SeleccionLocalidad() {
+            var x = document.getElementById("localidad").value;
+            drawParallelCoordinates(x);
+        }
+    </script>
+  
+  <script>
+      function SeleccionTipo() {
+          var x = document.getElementById("tipo").value;
+          drawParallelCoordinates(x);
+      }
+  </script>
+  
+  <script>
+      function SeleccionJornada() {
+          var x = document.getElementById("jornada").value;
+          drawParallelCoordinates(x);
+      }
+  </script>
+  
+  <script>
+      function SeleccionSector() {
+          var x = document.getElementById("sector").value;
+          drawParallelCoordinates(x);
+      }
+  </script>
+
+
+  </body>
+
+  
+
+
+
+
+</html>
