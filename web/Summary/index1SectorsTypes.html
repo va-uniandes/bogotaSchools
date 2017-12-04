@@ -32,13 +32,13 @@ svg {
   <title> Bogota Schools Enviments - Summary Bogota</title>
 </head>
 <body>
-  <h1>Bogota Schools Environments - Type of Education</h1>
-  <p>Type of education. Schools are traditional students (teenagers), adults, and schools for traditional and adults.</p>
-  <p> The sample wanted to inclued the schools for adults and schols that ofers classes to traditional and adults.</p>
+  <h1>Bogota Schools Environments - Sectors and Type of Education</h1>
+  <p>The idea is to shows the sector per each type of education.</p>
+  <p> Dark colors means non official schools and soft colors are linked to official schools.</p>
   <p>The visualization is a "Sized Donuts Multiple" based on <a href="https://bl.ocks.org/mbostock/4c5fad723c87d2fd8273">mbostock</a>.</p>
   <p>Summary bogota <a href="index.html">[locations]</a> <a href="index1Sectors.html">[Sectors]</a> <a href="index1Types.html">[types]</a> <a href="index1SectorsTypes.html">[Sectors and types]</a></p>
   <p>Summary Locations <a href="index2Sectors.html">[Sectors]</a> <a href="index2Types.html">[types]</a> <a href="index2SectorsTypes.html">[Sectors and types]</a></p>
-  <p>Tree <a href="../bogotaSchoolsTree/index.html">[all the schools]</a> <a href="../bogotaSchoolsTree/indexCollapsive.html">[collapsive the schools]</a></p>
+  <p>Tree <a href="../Tree/index.html">[all the schools]</a> <a href="../Tree/indexCollapsive.html">[collapsive the schools]</a></p>
 </body>
 <script src="//d3js.org/d3.v4.0.0-alpha.15.min.js"></script>
 <script>
@@ -51,7 +51,7 @@ var radius = d3.scaleSqrt()
     .range([0, 220]);
 
 var color = d3.scaleOrdinal()
-    .range(["#4682b4", "#ff8c00", "#009000"]);
+    .range(["#4682b4", "#83abcd","#ff8c00", "#ffbf71","#009000", "#71c171"]);
 
 var arc = d3.arc()
     .padRadius(50);
@@ -61,7 +61,7 @@ var pie = d3.pie()
     .padAngle(0.02)
     .value(function(d) { return d.schools; });
 
-d3.csv("data1Types.csv", function(d, i, columns) {
+d3.csv("data1SectorsTypes.csv", function(d, i, columns) {
   return {
     state: d.localidad,
     sum: d3.sum(columns.slice(1), function(key) { return +d[key]; }),
@@ -81,7 +81,7 @@ d3.csv("data1Types.csv", function(d, i, columns) {
 
   var legend = d3.select("body").append("svg")
       .attr("class", "legend")
-      .attr("width", 210)
+      .attr("width", 240)
       .attr("height", (data.columns.length - 1) * 20)
     .selectAll("g")
       .data(data.columns.slice(1).reverse())

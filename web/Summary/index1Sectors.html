@@ -32,13 +32,13 @@ svg {
   <title> Bogota Schools Enviments - Summary Bogota</title>
 </head>
 <body>
-  <h1>Bogota Schools Environments - Sectors per Location</h1>
-  <p>Non official schools are more representative in: Suba, Kennedy, Engativa, Bosa, Usaquen and Teusaquillo.</p>
-  <p>Official schools are more representative in : Ciudad Bolivar, Usme, San Cristobal, Rafael Uribe, Barrios Unidos, Fontibon, Tunjuelito.</p>
+  <h1>Bogota Schools Environments - Sectors</h1>
+  <p>Sectors. The education is offered by Official sector and non official sector. Official sector means the public education and non official to private education.</p>
+  <p>The sample represents both sectors in the same proportion.</p>
   <p>The visualization is a "Sized Donuts Multiple" based on <a href="https://bl.ocks.org/mbostock/4c5fad723c87d2fd8273">mbostock</a>.</p>
   <p>Summary bogota <a href="index.html">[locations]</a> <a href="index1Sectors.html">[Sectors]</a> <a href="index1Types.html">[types]</a> <a href="index1SectorsTypes.html">[Sectors and types]</a></p>
   <p>Summary Locations <a href="index2Sectors.html">[Sectors]</a> <a href="index2Types.html">[types]</a> <a href="index2SectorsTypes.html">[Sectors and types]</a></p>
-  <p>Tree <a href="../bogotaSchoolsTree/index.html">[all the schools]</a> <a href="../bogotaSchoolsTree/indexCollapsive.html">[collapsive the schools]</a></p>
+  <p>Tree <a href="../Tree/index.html">[all the schools]</a> <a href="../Tree/indexCollapsive.html">[collapsive the schools]</a></p>
 </body>
 <script src="//d3js.org/d3.v4.0.0-alpha.15.min.js"></script>
 <script>
@@ -61,7 +61,7 @@ var pie = d3.pie()
     .padAngle(0.02)
     .value(function(d) { return d.schools; });
 
-d3.csv("data2Sectors.csv", function(d, i, columns) {
+d3.csv("data1Sectors.csv", function(d, i, columns) {
   return {
     state: d.localidad,
     sum: d3.sum(columns.slice(1), function(key) { return +d[key]; }),
