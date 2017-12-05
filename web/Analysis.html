@@ -59,14 +59,14 @@
     <section>
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-md-6 order-2">
+          <div class="col-md-9 order-2">
             <div class="p-5"id="map">
             </div>
           </div>
-          <div class="col-md-6 order-1">
+          <div class="col-md-3 order-1">
             <div class="p-5">
               <h2 class="display-4">School's Distribution </h2>
-              <p>The data collected contains 200 schools distributed in all Bogota's Districts in order to achieve a 
+              <p>The data collected contains 200 schools distributed in all Bogota's Districts in order to achieve a
                   representative sample for the 1536 schools located in the city. </p>
             </div>
           </div>
@@ -78,7 +78,7 @@
     <section>
             <div class="container">
               <div class="row align-items-center">
-                <div class="col-md-6 order-2">
+                <div class="col-md-9 order-2">
                   <div class="p-5" id="DParallelCoordinates">
                         <svg id="ParallelCoordinates"/>
                         <div id="filtros">
@@ -94,9 +94,9 @@
                                     <tbody>
                                       <tr>
                                         <td>Localidades:</td>
-                                        <td>    
+                                        <td>
                                                 <select  id="localidad" onchange="SeleccionLocalidad()">
-                                                  <option >Localidad</option>
+                                                  <option value="Localidad">Localidad</option>
                                                   <option  value="./colegios_l0.csv">ANTONIO NARIÑO</option>
                                                   <option  value="./colegios_l1.csv">BARRIOS UNIDOS</option>
                                                   <option  value="./colegios_l2.csv">BOSA</option>
@@ -115,68 +115,68 @@
                                                   <option  value="./colegios_l15.csv">TUNJUELITO</option>
                                                   <option  value="./colegios_l16.csv">USAQUEN</option>
                                                   <option  value="./colegios_l17.csv">USME</option>
-                                                  </select>  
-                                        
+                                                  </select>
+
                                         </td>
                                         <td>Tipo:</td>
                                         <td>
-                                        
+
                                             <select  id="tipo" onchange="SeleccionTipo()">
-                                            <option >Tipo de Programa</option>
+                                            <option value="Tipo de Programa">Tipo de Programa</option>
                                             <option  value="./colegios_t0.csv">PROGRAMA PARA JÓVENES EN EXTRAEDAD Y ADULTOS</option>
                                             <option  value="./colegios_t1.csv">PROGRAMA PARA JÓVENES EN EXTRAEDAD Y ADULTOS , TRADICIONAL</option>
                                             <option  value="./colegios_t2.csv">TRADICIONAL</option>
                                             </select>
-                                        
-                                        
+
+
                                         </td>
                                       </tr>
                                       <tr>
                                           <td>Jornada:</td>
                                           <td>
-                                          
+
                                               <select  id="jornada" onchange="SeleccionJornada()">
-                                              <option >Tipo de Jornada</option>
+                                              <option value="Tipo de Jornada">Tipo de Jornada</option>
                                               <option  value="./colegios_j0.csv">COMPLETA</option>
                                               <option  value="./colegios_j1.csv">MAÑANA</option>
                                               <option  value="./colegios_j2.csv">NOCTURNA</option>
                                               <option  value="./colegios_j3.csv">TARDE</option>
                                               </select>
-                                          
-                                          
+
+
                                           </td>
-                
+
                                           <td>Sector:</td>
                                           <td>
-                                          
+
                                               <select  id="sector" onchange="SeleccionSector()">
-                                              <option >Sector</option>
+                                              <option value="Sector">Sector</option>
                                               <option  value="./colegios_s0.csv">OFICIAL</option>
                                               <option  value="./colegios_s1.csv">NO OFICIAL</option>
                                               </select>
-                                          
-                                          
+
+
                                           </td>
                                       </tr>
                                       </tbody>
                                   </table>
-                
+
                               </div>
 
                   </div>
                 </div>
-                <div class="col-md-6 order-1">
+                <div class="col-md-3 order-1">
                   <div class="p-5">
                     <h2 class="display-4">School's Distribution </h2>
-                    <p>The data collected contains 200 schools distributed in all Bogota's Districts in order to achieve a 
+                    <p>The data collected contains 200 schools distributed in all Bogota's Districts in order to achieve a
                         representative sample for the 1536 schools located in the city. </p>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-    
-          
+
+
 
     <!-- Footer -->
     <footer class="py-5 bg-dark">
@@ -202,40 +202,53 @@
 
     <script src="./map.js"></script>
     <script src="./ParallelCoordinates.js"></script>
-    
+
     <script>
     function loadGraphs()
     {
         drawMap();
-        drawParallelCoordinates("./colegios_total.csv")
-        
+        drawParallelCoordinates("./colegios_total.csv");
+
+
     }
     </script>
 
 <script>
         function SeleccionLocalidad() {
             var x = document.getElementById("localidad").value;
+            document.getElementById("tipo").value = "Tipo de Programa";
+            document.getElementById("jornada").value = "Tipo de Jornada";
+            document.getElementById("sector").value = "Sector";
             drawParallelCoordinates(x);
         }
     </script>
-  
+
   <script>
       function SeleccionTipo() {
           var x = document.getElementById("tipo").value;
+          document.getElementById("localidad").value = "Localidad";
+          document.getElementById("jornada").value = "Tipo de Jornada";
+          document.getElementById("sector").value = "Sector";
           drawParallelCoordinates(x);
       }
   </script>
-  
+
   <script>
       function SeleccionJornada() {
           var x = document.getElementById("jornada").value;
+          document.getElementById("localidad").value = "Localidad";
+          document.getElementById("tipo").value = "Tipo de Programa";
+          document.getElementById("sector").value = "Sector";
           drawParallelCoordinates(x);
       }
   </script>
-  
+
   <script>
       function SeleccionSector() {
           var x = document.getElementById("sector").value;
+          document.getElementById("localidad").value = "Localidad";
+          document.getElementById("tipo").value = "Tipo de Programa";
+          document.getElementById("jornada").value = "Tipo de Jornada";
           drawParallelCoordinates(x);
       }
   </script>
@@ -243,7 +256,7 @@
 
   </body>
 
-  
+
 
 
 
