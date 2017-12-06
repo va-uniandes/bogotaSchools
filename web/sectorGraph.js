@@ -15,7 +15,7 @@ var y = d3v4.scaleLinear()
     .rangeRound([height, 0]);
 
 var z = d3v4.scaleOrdinal()
-    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+    .range(["#4682b4", "#83abcd","#ff8c00", "#ffbf71","#009000", "#71c171"]);
 
 d3v4.csv("data2SectorsTypes.csv", function(d, i, columns) {
   for (i = 1, t = 0; i < columns.length; ++i) t += d[columns[i]] = +d[columns[i]];
